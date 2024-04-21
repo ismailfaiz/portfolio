@@ -1,76 +1,196 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
-  @layer base {
-    :root {
-      --background: 0 0% 100%;
-      --foreground: 222.2 84% 4.9%;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-      --card: 0 0% 100%;
-      --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-      --popover: 0 0% 100%;
-      --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-      --primary: 222.2 47.4% 11.2%;
-      --primary-foreground: 210 40% 98%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-      --secondary: 210 40% 96.1%;
-      --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-      --muted: 210 40% 96.1%;
-      --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-      --accent: 210 40% 96.1%;
-      --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-      --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-      --border: 214.3 31.8% 91.4%;
-      --input: 214.3 31.8% 91.4%;
-      --ring: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
-      --radius: 0.5rem;
-    }
+    --radius: 0.5rem;
 
-    .dark {
-      --background: 222.2 84% 4.9%;
-      --foreground: 210 40% 98%;
+    --secondary-glow: conic-gradient(
+      from 10deg at 50% 50%,
+      #eb74946f 0deg,
+      #ae77b26f 55deg,
+      #97b5da6f 120deg,
+      #0099ca6f 160deg,
+      transparent 360deg
+    );
 
-      --card: 222.2 84% 4.9%;
-      --card-foreground: 210 40% 98%;
+    --third-glow: conic-gradient(
+      from 90deg at 50% 50%,
+      #ff8b7e6f 0deg,
+      #e24e6b6f 160deg,
+      #7ed2da6f 120deg,
+      #8bdce06f 55deg,
+      transparent 360deg
+    );
 
-      --popover: 222.2 84% 4.9%;
-      --popover-foreground: 210 40% 98%;
-
-      --primary: 210 40% 98%;
-      --primary-foreground: 222.2 47.4% 11.2%;
-
-      --secondary: 217.2 32.6% 17.5%;
-      --secondary-foreground: 210 40% 98%;
-
-      --muted: 217.2 32.6% 17.5%;
-      --muted-foreground: 215 20.2% 65.1%;
-
-      --accent: 217.2 32.6% 17.5%;
-      --accent-foreground: 210 40% 98%;
-
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 210 40% 98%;
-
-      --border: 217.2 32.6% 17.5%;
-      --input: 217.2 32.6% 17.5%;
-      --ring: 212.7 26.8% 83.9%;
-    }
   }
 
-  @layer base {
-    * {
-      @apply border-border;
-    }
-    body {
-      @apply bg-background text-foreground;
-    }
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
+}
+
+.code-style {
+  background-color: #fee; /* Light red background, similar to the image */
+  color: #c7254e; /* Dark red text color */
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; /* Monospace font for code */
+  padding: 0.2em 0.4em; /* Top & Bottom | Left & Right padding */
+  font-size: 3vh; /* Slightly smaller font size than the surrounding text */
+  border-radius: 4px; /* Rounded corners */
+  border: 1px solid #f5c6cb; /* Light red border, similar to the background */
+}
+
+body {
+  overflow: hidden;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  opacity: 0.8;
+  filter: blur(90px);
+}
+
+body::before {
+  background: var(--third-glow);
+  border-radius: 50%;
+  width: 50vw;
+  height: 50vw;
+  margin-left: -200px;
+  top: calc(50vh - 50vw / 2);
+  left: calc(50vw);
+  animation: animateBefore 10s ease-in-out infinite;
+}
+
+body::after {
+  background: var(--secondary-glow);
+  border-radius: 50%;
+  width: 500px;
+  height: 700px;
+  top: calc(50vh - 50vw / 2);
+  left: calc(50vw - 50vw / 2);
+  animation: animateAfter 13s ease-in-out infinite;
+}
+
+@keyframes animateBefore {
+  0%, 100% {
+      transform: translateY(0) rotate(0deg) scale(1);
+  }
+  25% {
+      transform: translateY(200px) rotate(45deg) scale(1.1);
+  }
+  50% {
+      transform: translateY(0) rotate(90deg) scale(0.9);
+  }
+  75% {
+      transform: translateY(-200px) rotate(135deg) scale(1.05);
+  }
+}
+
+@keyframes animateAfter {
+  0%, 100% {
+      transform: translateX(0) rotate(0deg) scale(1);
+      opacity: 1;
+  }
+  25% {
+      transform: translateX(200px) rotate(-45deg) scale(1.1);
+      opacity: 0.9;
+  }
+  50% {
+      transform: translateX(-200px) rotate(-90deg) scale(0.8);
+      opacity: 0.8;
+  }
+  75% {
+      transform: translateX(100px) rotate(-135deg) scale(1.2);
+      opacity: 0.95;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground
+  }
+  .opacity {
+    background-color: white;
+    border-color: hsl(var(--input));
+    opacity: 0.75;
+  }
+}
+
+@layer components {
+  .fixed-footer {
+    @apply fixed inset-x-0 bottom-0 bg-white/40 text-center py-4 text-sm shadow;
+    backdrop-filter: blur(10px);
+    border-top: 1px solid #ddd;
+  }
+
+  .footer-link {
+    color: #3B82F6; /* Tailwind blue-500 */
+    text-decoration: underline; /* This will underline the text */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .footer-link:hover {
+    color: #2563EB; /* Tailwind blue-700 */
+  }
+}

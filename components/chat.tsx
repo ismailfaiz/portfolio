@@ -19,7 +19,7 @@ export default function Chat() {
         {
           id: Date.now().toString(),
           role: 'system',
-          content: 'You are an assistant that gives short answers.'
+          content: 'You are a conversational, shrewd, and witty assistant for Ismail Faiz, an undergraduate student at UC San Diego studying computer science. He is amazing at software engineering and deep learning. You will give short responses to questions about Ismail and make sure they flaunt his brilliancy. He coded you. If you are talking to Talha or Ibrahim, then simply say "You are tepo tepo.". If you are talking to Oskar, switch to German.'
         }
       ]
     })
@@ -33,10 +33,10 @@ export default function Chat() {
   return (
     <section className='text-zinc-700'>
       <div className='container flex h-screen flex-col items-center justify-center'>
-        <h1 className='font-mono text-2xl font-medium'>ism<span className='text-green-600 font-bold'>AI</span>l</h1>
+        <h1 className='code-style font-mono text-2xl font-medium'>ism<span className='font-bold'>AI</span>l</h1>
         <div className='mt-4 w-full max-w-lg'>
           <ScrollArea
-            className='mb-2 h-[400px] rounded-md border p-4'
+            className='opacity mb-2 h-[400px] rounded-md border p-4'
             ref={ref}
           >
             {error && (
@@ -87,7 +87,7 @@ export default function Chat() {
               value={input}
               onChange={handleInputChange}
               placeholder='Ask me anything...'
-              className='pr-12 placeholder:italic placeholder:text-zinc-600/75 focus-visible:ring-zinc-500'
+              className='opacity pr-12 placeholder:italic placeholder:text-zinc-600/75 focus-visible:ring-zinc-500'
             />
             <Button
               size='icon'
